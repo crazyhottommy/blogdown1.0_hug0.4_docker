@@ -11,6 +11,8 @@ docker build -t my-rstudio-blogdown .
 ```
 docker run -d -p 8787:8787 -p 8080:8080 \
     -v ~/githup_repo/DivingIntoGeneticsAndGenomics:/home/rstudio/my_blog \
+    -v ~/R/host-site-library:/usr/local/lib/R/host-site-library \
+    -v ~/blog_data:/home/rstudio/blog_data \
     -e USER=rstudio \
     -e PASSWORD=test \
     --name my-rstudio-hugo-container my-rstudio-blogdown
